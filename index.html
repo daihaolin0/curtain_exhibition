@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}首页 - 盛轩窗饰{% endblock %}
+
+{% block content %}
+
+<section class="company-section">
+    <img class="logo" src="{{ url_for('static', filename='images/logo.png') }}" alt="盛轩窗饰">
+
+    <h1>佛山市盛轩窗饰有限公司</h1>
+    <h2>Foshan Shengxuan Window Decoration Co.Ltd</h2>
+
+    <p class="company-slogan">
+        窗帘轨道 · 罗马杆 · 弯轨配件供应商
+    </p>
+
+    <p class="tags">
+        批发经销 ｜ 区域代理 ｜ 工程定制 ｜ 电商分销 ｜ 跨境直供
+    </p>
+</section>
+
+<section class="home-category-section">
+    <div class="section-header">
+        <h3>产品中心</h3>
+        <span>Product Center</span>
+    </div>
+
+    <div class="home-category-grid">
+        {% for cid, cdata in categories.items() %}
+        <a href="/category/{{ cid }}" class="home-category-card">
+            {{ cdata.category_name }}
+        </a>
+        {% endfor %}
+
+        <a href="#" class="home-category-card">其它配件</a>
+    </div>
+</section>
+
+<section class="feature-section">
+    <div class="section-header light">
+        <h3>服务优势</h3>
+        <span>Service Advantages</span>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>源头厂家</h3>
+            <p>集研发、生产、销售为一体</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>规格齐全</h3>
+            <p>多系列轨道与配件可选</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>现货混批</h3>
+            <p>支持多款产品组合下单</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>发货稳定</h3>
+            <p>库存充足，发货效率高</p>
+        </div>
+    </div>
+</section>
+
+<section class="profile-section">
+    <div class="section-header">
+        <h3>公司简介</h3>
+        <span>Company Profile</span>
+    </div>
+
+    <div class="profile-card">
+        <p>
+            佛山市盛轩窗饰有限公司是一家专注于窗帘轨道、罗马杆、弯轨及相关配件的窗饰产品供应商，
+            可为客户提供批发经销、区域代理、工程定制、电商分销等服务。
+        </p>
+
+        <p>
+            公司产品规格齐全，支持多类型窗饰产品搭配，适用于家装、工程、门店、电商及批发流通等不同销售场景。
+        </p>
+    </div>
+</section>
+
+{% endblock %}
